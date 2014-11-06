@@ -229,5 +229,6 @@ mysql_select_db($database) or die("Unable to select database");
 $query = "INSERT INTO KO VALUES ('$Turn','$HTeam','$HKO')";
 mysql_query($query);
 mysql_close(); 
-echo "เพิ่มแต้มแล้ว"; 
+echo "เพิ่มแต้มแล้ว";
+header("Location: InputScore.php"); 
 ?>
