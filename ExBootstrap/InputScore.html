@@ -3,10 +3,12 @@
     <title>Battle Field Score</title>
   </head>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="jquery.js">
-      function hideP()
-      {
-        $('p').toggle('slow');
+    <script language="JavaScript">
+       var count=1;
+   function myFun(f) 
+       {
+         count++;
+         f.Turn.value = count;
       }
     </script>
     <script type="text/javascript"></script>
@@ -23,7 +25,7 @@
           </div>
             <div class="span6">
               <form action="insert.php" method="post">Team<br>  
-              Turn: <input type="text" name="Turn"><br>
+              Turn: <input type="Number" name="Turn" value=1><br>
               Team: <label type="text">A</label>
               <input type="hidden" name="ATeam" value="A">
               <input type="text" name="ACMD1" placeholder="คำสั่งโจมตีคนที่1">
@@ -81,6 +83,7 @@
               <input type="number" name="HPEN" placeholder="Penalty"><br>
               <input type="submit" value="Add">
               <input type="reset" value="Reset">
+                    <input type="button" name="myBut" value="click" onclick="myFun(form)">
             </div>
         </div>
         <section>
