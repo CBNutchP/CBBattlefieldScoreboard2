@@ -230,5 +230,5 @@ $query = "INSERT INTO KO VALUES ('$Turn','$HTeam','$HKO')";
 mysql_query($query);
 mysql_close(); 
 echo "เพิ่มแต้มแล้ว";
-header("Location: InputScore.php"); 
+header("Location: InputScore.html"); 
 ?>
