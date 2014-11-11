@@ -4,11 +4,12 @@
   </head>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
     <script language="JavaScript">
-       var count=1;
+       var count=0;
     function myFun(f) 
        {
          count++;
          f.Turn.value = count;
+         f.dcount.value = count + 1;
       }
     function reCount(f)
     {
@@ -21,6 +22,7 @@
       <ul class="nav nav-tabs" role="tablist">
             <button class="btn btn-danger">Input</button>
             <button class="btn btn-danger">Score</button>
+            <button class="btn btn-danger"  onclick="window.location.href='EditPoint.html'">Edit</button>
       </ul>
     <body>
       <div class="container">
@@ -32,7 +34,7 @@
             <div class="span6">
               <form action="insert.php" method="post" target="iframe_target">
               <iframe id="iframe_target" name="iframe_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
-              <h3><span class="label label-default">Turn:</span><input type="Number" name="Turn" value="1"><br><label></label></h3>
+              <h3><span class="label label-default">Turn:</span><input type="hidden" name="Turn" value="0"><input type ="number" name="dcount"value = "1"></><br><label></label></h3>
               <br/>
 
 <table class="table" border="1">
