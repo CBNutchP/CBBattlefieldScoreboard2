@@ -24,6 +24,7 @@
             </div>
           </div>
             <div class="span6">
+<<<<<<< Updated upstream
               <form action="insert.php" method="post">Team<br>  
               Turn: <input type="Number" name="Turn" value=1><br>
               Team: <label type="text">A</label>
@@ -38,19 +39,48 @@
               refill2:<input type="checkbox" name="Are2" value="R">
               KO: <input type="checkbox" name="AKO" value="1">
               <input type="number" name="APEN" placeholder="Penalty"><br>
+=======
+              <form action="insert.php" method="post">Team<br>        
+              Turn: <input type="text" name="Turn"><br>
+>>>>>>> Stashed changes
 
-              Team: <label type="text">B</label>  
-              <input type="hidden" name="BTeam" value="B">
-              Att1:<input type="checkbox" name="BCMD1" value="A">
+<table border="1">
+  <tr>
+   
+ 
+
+             <td> Team: <label type="text">A</label>
+             <td> <input type="hidden" name="ATeam" value="A">
+             <td> Att1:<input type="checkbox" name="ACMD1" value="A">
+                  Def1:<input type="checkbox" name="Ade1" value="D">
+                  charge1:<input type="checkbox" name="Ach1" value="C">
+                  refill1:<input type="checkbox" name="Are1" value="R"></td>
+             <td> Att2:<input type="checkbox" name="ACMD2" value="B">
+                  Def2:<input type="checkbox" name="Ade2" value="D">
+                  charge2:<input type="checkbox" name="Ach2" value="C">
+                  refill2:<input type="checkbox" name="Are2" value="R">
+                  KO: <input type="checkbox" name="AKO" value="1"></td>
+             <td> <input type="number" name="APEN" placeholder="Penalty"><br></td>
+</tr>
+</table> 
+   
+<table border="1">
+  <tr>
+            <td>  Team: <label type="text">B</label>  
+            <td>  <input type="hidden" name="BTeam" value="B">
+            <td>  Att1:<input type="checkbox" name="BCMD1" value="A">
               Def1:<input type="checkbox" name="Bde1" value="D">
               charge1:<input type="checkbox" name="Bch1" value="C">
-              refill1:<input type="checkbox" name="Bre1" value="R">|
-              Att2:<input type="checkbox" name="BCMD2" value="B">
+              refill1:<input type="checkbox" name="Bre1" value="R"></td>
+            <td>  Att2:<input type="checkbox" name="BCMD2" value="B">
               Def2:<input type="checkbox" name="Bde2" value="D">
               charge2:<input type="checkbox" name="Bch2" value="C">
               refill2:<input type="checkbox" name="Bre2" value="R">
-              KO: <input type="checkbox" name="BKO" value="1">
-              <input type="number" name="BPEN" placeholder="Penalty"><br>
+              KO: <input type="checkbox" name="BKO" value="1"></td>
+            <td>  <input type="number" name="BPEN" placeholder="Penalty"><br></td>
+
+</tr>
+</table> 
 
               Team: <label type="text">C</label>
               <input type="hidden" name="CTeam" value="C">
