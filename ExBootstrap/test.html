@@ -1,0 +1,34 @@
+
+<html>
+<head>
+<title>jQuery progressTimer Plugin Demo</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+</head>
+<body>
+	  <li>Speed<span class="pull-right"><em>@Math.Round(DepthValue, 2) m/min</em></span>
+        <div class="progress progress-success">
+            <div class="bar" style="width: %; display: block; float: left;"></div>
+        </div>
+    </li>
+<h1 style="margin-top:150px;">Test time progress</h1>
+<input type="hidden" id="restTime" value="15" style="width: 50px" />
+<button id="startProgressTimer">Do it!</button>
+<div id="progressTimer"></div>
+<script src="jquery-2.1.1.min.js"></script> 
+<script src="bootstrap/css/bootstrap.css"></script> 
+<script src="jquery.progressTimer.js"></script> 
+<script>
+      $("#startProgressTimer").click(function progressTime() {
+        $("#progressTimer").progressTimer({
+          timeLimit: $("#restTime").val()
+        });
+      });
+</script>
+<script type="text/javascript">
+  (function progressTime() {
+  })();
+
+</script>
+</body>
+</html>
