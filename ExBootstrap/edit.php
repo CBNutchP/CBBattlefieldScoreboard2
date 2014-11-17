@@ -24,13 +24,13 @@ if($AKO == '1'){
 print_r($APIT);
 mysql_connect($servername,$username,$password) or die("Unable to connect database");
 mysql_select_db($database) or die("Unable to select database");
-$query = "INSERT INTO TurnTb VALUES ('$Turn','$ATeam','$ACMD1','$ACMD2','$APIT')";
+$query = "UPDATE TurnTb SET Turn='$ATurn', Team='$ATeam',Commander1='$ACMD1',Commander2='$ACMD2',PIT='$APIT'"; 
 mysql_query($query);
 mysql_select_db($database) or die("Unable to select database");
-$query = "INSERT INTO PenaltyTb VALUES ('$Turn','$ATeam','$AFoul')";
+$query = "UPDATE PenaltyTb SET Turn='$ATurn', Team='$ATeam',Foul='AFoul'";
 mysql_query($query);
 mysql_select_db($database) or die("Unable to select database");
-$query = "INSERT INTO KO VALUES ('$Turn','$ATeam','$AKO')";
+$query = "UPDATE KO SET Turn='$ATurn', Team='$ATeam',KO='AKO'";
 mysql_query($query);
 mysql_close(); 
 $BTeam=$_POST['BTeam'];
@@ -80,13 +80,13 @@ if($CKO == '1'){
 }
 mysql_connect($servername,$username,$password) or die("Unable to connect database");
 mysql_select_db($database) or die("Unable to select database");
-$query = "INSERT INTO TurnTb VALUES ('$Turn','$CTeam','$CCMD1','$CCMD2','$CPIT')";
+$query = "UPDATE TurnTb VALUES ('$Turn','$CTeam','$CCMD1','$CCMD2','$CPIT')";
 mysql_query($query);
 mysql_select_db($database) or die("Unable to select database");
-$query = "INSERT INTO PenaltyTb VALUES ('$Turn','$CTeam','$CFoul')";
+$query = "UPDATE INTO PenaltyTb VALUES ('$Turn','$CTeam','$CFoul')";
 mysql_query($query);
 mysql_select_db($database) or die("Unable to select database");
-$query = "INSERT INTO KO VALUES ('$Turn','$CTeam','$CKO')";
+$query = "UPDATE KO VALUES ('$Turn','$CTeam','$CKO')";
 mysql_query($query);
 mysql_close(); 
 $DTeam=$_POST['DTeam'];

@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>Battle Field Score</title>
+  </head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <script language="JavaScript">
+       var count=0;
+    function myFun(f) 
+       {
+         count++;
+         f.Turn.value = count;
+      }
+    function reCount(f)
+    {
+      count =1;
+      f.Turn.value = count;
+    }
+
+    </script>
+    <script type="text/javascript"></script>
+      <ul class="nav nav-tabs" role="tablist">
+            <button class="btn btn-danger">Input</button>
+            <button class="btn btn-danger">Score</button>
+            <button class="btn btn-danger">Edit</button>
+      </ul>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <div class="bgred border">
+            </div>
+          </div>
+            <div class="span6">
+              <form action="edit.php" method="post" target="iframe_target">
+              <iframe id="iframe_target" name="iframe_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
+              <h3><span class="label label-default">Turn:</span><input type="Number" name="Turn" value="0"><br><label></label></h3>
+              <br/>
+
+<table class="table" border="1">
+  <tr>
+    <td><h2>Team</h2></td><td><h2>Commander1</h2></td><td><h2>Commander2</h2></td><td><h2>K.O</h2></td><td><h2>Penalty</h2></td>
+    <td> Team: <label type="text">A</label></td>
+              <input type="hidden" name="ATeam" value="A">
+              <td> Att1:<input type="radio" name="ACDM1" value="A">
+              Def1:<input type="radio" name="ACDM1" value="D">
+              charge1:<input type="radio" name="ACDM1" value="C">
+              refill1:<input type="radio" name="ACDM1" value="R"></td>
+              <td> Att2:<input type="radio" name="ACDM2" value="A">
+              Def2:<input type="radio" name="ACDM2" value="D">
+              charge2:<input type="radio" name="ACDM2" value="C">
+              refill2:<input type="radio" name="ACDM2" value="R"></td>
+              <td>KO: <input type="checkbox" name="AKO" value="1"></td>
+              <td><input type="number" name="APEN" placeholder="Penalty"></td>
+  <tr>
+</table> 
+
+              <input type="submit" class="btn btn-success" value="Add" onclick="myFun(form)"> 
+              <input type="reset" class="btn btn-warning" value="Reset">
+            </div>
+        </div>
+        <section>
+          
+        </section>
+        <div>
+        </div>
+      </div>
+    </body>
+</ul>
+</html>
