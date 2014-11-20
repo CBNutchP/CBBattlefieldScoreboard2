@@ -1,75 +1,13 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Batle Field Score">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Hege Refsnes">
     <title>Battle Field Score</title>
   </head>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
     <script language="JavaScript">
-    function keydown(e) {
-  var key = e.keyCode;
-  // R
-  if(key == 82) {
-    reloadscore();
-  }
-  // SPACE
-  if(key == 32) {
-    if(gameStarted) {
-      if(timerRunning) {
-        timerRunning = false;
-        $('#pausedtext').css('display','inline');
-        $('#titletext').css('display','none');
-      } else {
-        timerRunning = true;
-        $('#pausedtext').css('display','none');
-        $('#titletext').css('display','inline');
-      }
-    }
-  }
-  // S
-  if(key == 83) {
-    if(!gameStarted) {
-      timerRunning = true;
-      gameStarted = true;
-      $('#pausedtext').css('display','none');
-      $('#readytext').css('display','none');
-      $('#titletext').css('display','inline');
-      TimerIntervalHandler = setInterval(updatetime, TIMERUPDATEINTERVAL);
-    }
-  }
-  // LEFT
-  if(key == 37) {
-    secLeft--;
-    if(secLeft < 1)
-      secLeft = 1;
-    document.getElementById('secleft').innerHTML = secLeft;
-    $('#timebar').css('width',gettimewidthstring());
-    $('#overallbar').css('width',getoverallwidthstring());
-  }
-  // RIGHT
-  if(key == 39) {
-    secLeft++;
-    if(secLeft > secPerTurn)
-      secLeft = secPerTurn;
-    document.getElementById('secleft').innerHTML = secLeft;
-    $('#timebar').css('width',gettimewidthstring());
-    $('#overallbar').css('width',getoverallwidthstring());
-  }
-  // UP
-  if(key == 38) {
-    turnNumber++;
-    if(turnNumber > maxTurn)
-      turnNumber = maxTurn;
-    document.getElementById('turnno').innerHTML = turnNumber;
-    $('#overallbar').css('width',getoverallwidthstring());
-  }
-  // DOWN
-  if(key == 40) {
-    turnNumber--;
-    if(turnNumber < 1)
-      turnNumber = 1;
-    document.getElementById('turnno').innerHTML = turnNumber;
-    $('#overallbar').css('width',getoverallwidthstring());
-  }
-}
     </script>
     <script type="text/javascript"></script>
     <style>
