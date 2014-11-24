@@ -1,0 +1,288 @@
+<html>
+  <head>
+
+    <title>Battle Field Score</title>
+  </head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <script language="JavaScript">
+    function keydown(e) {
+  var key = e.keyCode;
+  // R
+  if(key == 82) {
+    reloadscore();
+  }
+  // SPACE
+  if(key == 32) {
+    if(gameStarted) {
+      if(timerRunning) {
+        timerRunning = false;
+        $('#pausedtext').css('display','inline');
+        $('#titletext').css('display','none');
+      } else {
+        timerRunning = true;
+        $('t#pausedext').css('display','none');
+        $('#titletext').css('display','inline');
+      }
+    }
+  }
+  // S
+  if(key == 83) {
+    if(!gameStarted) {
+      timerRunning = true;
+      gameStarted = true;
+      $('#pausedtext').css('display','none');
+      $('#readytext').css('display','none');
+      $('#titletext').css('display','inline');
+      TimerIntervalHandler = setInterval(updatetime, TIMERUPDATEINTERVAL);
+    }
+  }
+  // LEFT
+  if(key == 37) {
+    secLeft--;
+    if(secLeft < 1)
+      secLeft = 1;
+    document.getElementById('secleft').innerHTML = secLeft;
+    $('#timebar').css('width',gettimewidthstring());
+    $('#overallbar').css('width',getoverallwidthstring());
+  }
+  // RIGHT
+  if(key == 39) {
+    secLeft++;
+    if(secLeft > secPerTurn)
+      secLeft = secPerTurn;
+    document.getElementById('secleft').innerHTML = secLeft;
+    $('#timebar').css('width',gettimewidthstring());
+    $('#overallbar').css('width',getoverallwidthstring());
+  }
+  // UP
+  if(key == 38) {
+    turnNumber++;
+    if(turnNumber > maxTurn)
+      turnNumber = maxTurn;
+    document.getElementById('turnno').innerHTML = turnNumber;
+    $('#overallbar').css('width',getoverallwidthstring());
+  }
+  // DOWN
+  if(key == 40) {
+    turnNumber--;
+    if(turnNumber < 1)
+      turnNumber = 1;
+    document.getElementById('turnno').innerHTML = turnNumber;
+    $('#overallbar').css('width',getoverallwidthstring());
+  }
+}
+    </script>
+
+
+<style type="text/css">
+
+</style>
+
+
+    <script type="text/javascript">
+
+function zxcAnimate(mde,obj,srt){
+ this.to=null;
+ this.obj=typeof(obj)=='object'?obj:document.getElementById(obj);
+ this.mde=mde.replace(/\W/g,'');
+ this.data=[srt||0];
+ return this;
+}
+
+zxcAnimate.prototype.animate=function(srt,fin,ms,scale,c){
+ clearTimeout(this.to);
+ this.time=ms||this.time||0;
+ this.neg=srt<0||fin<0;
+ this.data=[srt,srt,fin];
+ this.mS=this.time*(!scale?1:Math.abs((fin-srt)/(scale[1]-scale[0])));
+ this.c=typeof(c)=='string'?c.charAt(0).toLowerCase():this.c?this.c:'';
+ this.inc=Math.PI/(2*this.mS);
+ this.srttime=new Date().getTime();
+ this.cng();
+}
+
+zxcAnimate.prototype.cng=function(){
+ var oop=this,ms=new Date().getTime()-this.srttime;
+ this.data[0]=(this.c=='s')?(this.data[2]-this.data[1])*Math.sin(this.inc*ms)+this.data[1]:(this.c=='c')?this.data[2]-(this.data[2]-this.data[1])*Math.cos(this.inc*ms):(this.data[2]-this.data[1])/this.mS*ms+this.data[1];
+ this.apply();
+ if (ms<this.mS) this.to=setTimeout(function(){oop.cng()},10);
+ else {
+  this.data[0]=this.data[2];
+  this.apply();
+  if (this.Complete) this.Complete(this);
+ }
+}
+
+zxcAnimate.prototype.apply=function(){
+ if (isFinite(this.data[0])){
+  if (this.data[0]<0&&!this.neg) this.data[0]=0;
+  if (this.mde!='opacity') this.obj.style[this.mde]=Math.floor(this.data[0])+'px';
+  else zxcOpacity(this.obj,this.data[0]);
+ }
+}
+
+function zxcOpacity(obj,opc){
+ if (opc<0||opc>100) return;
+ obj.style.filter='alpha(opacity='+opc+')';
+ obj.style.opacity=obj.style.MozOpacity=obj.style.WebkitOpacity=obj.style.KhtmlOpacity=opc/100-.001;
+}
+
+
+</script>
+ 
+</head>
+
+
+
+
+
+
+
+
+   <style type="text/css">
+         #progressbox {
+         border: 2px solid #ffffff;
+         padding: 1px;
+         position:relative;
+         width:90%;
+         border-radius: 10px;
+         margin: 10px;
+         display:block;
+         text-align:center;
+         }
+         #progressbar {
+         height:20px;
+         border-radius: 10px;
+         background-color: #D84A38;
+         width:100%;
+         }
+         #statustxt {
+         top:3px;
+         left:50%;
+         position:absolute;
+         display:inline-block;
+         color: #ffffff;
+         }
+      </style>
+      <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+      <script type="text/javascript">
+         $( document ).ready(function() {
+
+          var idTime=self.setInterval(function(){clock()},1000);//ตั้งเวลา
+
+          var i=100;
+         function clock()
+         {
+           i=i-1;
+           $('#progressbar').width(i+'%');
+           $('#statustxt').text(i+'sec');
+
+         if(i==0)
+         {
+             //clearInterval(idTime);กรณีที่ไม่ต้องการ Loop  100% แล้วให้หยุด
+             i=60;
+         }
+
+         }
+         });
+
+      </script>
+   </head>
+   <body>
+      <div id="progressbox">
+         <div id="progressbar"></div >
+         <div id="statustxt">60sec</div >
+      </div>
+
+   </body>
+
+
+
+
+
+
+    
+    <style>
+      body
+      {
+        background: url(bgshow.jpg);
+      }
+
+      p{
+        font-size:50px;
+        color:white;
+      }
+      </style>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <div class="bgred border">
+            </div>
+          </div>
+            <div class="span6">
+              <form>
+              <font size="6"><span class="label label-default"><label>Turn</label>
+                      <label>1</label>
+                      <label>/</label>
+                              <select>
+                              <option value="7">7</option>
+                              <option value="14">14</option>
+                              <option value="21">21</option>
+                              </select></span>
+            <br/>
+
+  <td>
+  <div class="row">
+
+    <div align="center" class="col-md-3"> <img src="animal\frog.png" ><br>
+    <div class="span4 team" id="team0" >
+        <p class="teamname">ทีมA</p>
+        <p class="score">0</p>
+    </div></div>
+    <div align="center" class="col-md-3"> <img src="animal\geraf.png" ><br>
+    <div class="span4 team" id="team1">
+        <p class="teamname">ทีมB</p>
+        <p class="score">0</p>
+    </div></div>
+        <div align="center" class="col-md-3"> <img src="animal\lion.png" ><br>
+    <div class="span4 team" id="team2">
+        <p class="teamname">ทีมC</p>
+        <p class="score">0</p>
+    </div></div>
+        <div align="center" class="col-md-3"> <img src="animal\monky.png" ><br>
+    <div class="span4 team" id="team3">
+        <p class="teamname">ทีมD</p>
+        <p class="score">0</p>
+    </div></div>
+  </div>
+
+  <div class="row">
+    <div align="center" class="col-md-3"> <img src="animal\pig.png" ><br>
+    <div class="span4 team" id="team4">
+        <p class="teamname">ทีมE</p>
+        <p class="score">0</p>
+    </div></div>
+        <div align="center" class="col-md-3"> <img src="animal\panda.png" ><br>
+    <div class="span4 team" id="team5">
+        <p class="teamname">ทีมF</p>
+        <p class="score">0</p>
+    </div></div>
+        <div align="center" class="col-md-3"> <img src="animal\sheep.png" ><br>
+    <div class="span4 team" id="team6">
+        <p class="teamname">ทีมG</p>
+        <p class="score">0</p>
+    </div></div>
+        <div align="center" class="col-md-3"> <img src="animal\tiger.png"  ><br>
+    <div class="span4 team" id="team7">
+        <p class="teamname">ทีมH</p>
+        <p class="score">0</p>
+    </div></div>
+  </div>
+  </td>
+        </div>
+      </div>
+    </body>
+</ul>
+</html>
