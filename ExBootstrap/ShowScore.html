@@ -1,97 +1,107 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Batle Field Score">
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-    <meta name="author" content="Hege Refsnes">
-    <title>Battle Field Score</title>
-  </head>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
-    <script language="JavaScript">
-    </script>
-    <script type="text/javascript"></script>
-    <style>
-      body
-      {
-        background: black;
-      }
+<head>
+  <title>Bootstrap Progress Bar</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+</head>
+<style>
+.container {
+  margin-top: 15px;
+  font-size:15px;
+      color:white;
+}
+</style>
+<body  onkeydown="keydown(event);">
+  <div class="container">
+<h1><span class="label label-default" id ="cturn">Turn:</span><span class="label label-default" id="OutputText"></div></h1>
+  <div class="progress">
+  <div class="progress-bar progress-bar- f progress-bar-striped active" role="progressbar" aria-valuemax="100" style="width: 100%" id="timebar">
+  </div>
+</div>
+</div>
+  <div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuemax="100" style="width: 100%" id="overallbar">
+  </div>
+  </div>
+  <script src="bootstrap\js\bootstrap.js"></script>
+  <script src="jquery-2.1.1.min.js"></script>
+  <script src="pg.js"></script>
+<button id="btn1" onclick="pgstart()">START</button>
+<button id="btn2" onclick="pgstop()">STOP</button>
+<button id="btn3" onclick="pgpause()">PAUSE</button> <br/>
+<script type="text/javascript" src="jquery.js"></script>
 
-      p{
-        font-size:36px;
-        color:white;
-      }
-      </style>
-    <body>
-      <div class="container">
-        <div class="row">
-          <div class="span6">
-            <div class="bgred border">
-            </div>
+
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+  <style>
+    body
+    {
+      background: black;
+    }
+
+    p{
+      font-size:36px;
+      color:white;
+    }
+    </style>
+    <div class="container">
+      <div class="row">
+        <div class="span6">
+          <div class="bgred border">
           </div>
-            <div class="span6">
-              <form>
-              <h1><span class="label label-default">Turn:</span></h1>
-              <br/>
-              <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-    <span class="sr-only">60% Complete</span>
-  </div>
-</div>
-        <div class="progress active" style="background-color: #666; background-image: -webkit-linear-gradient(top, #444, #666);" id="timeprogress">
-          <div class="bar" style="width: 100%;" id="timebar"></div>
         </div>
-  </div>
+          <div class="span6">
+            <form>
+</div>
 </div>
 
-  <td>
-  <div class="row">
-    <div align="center" class="col-md-3"> <img src="animal\frog.png" alt="140x140" ><br>
-    <div class="span4 team" id="team0">
-        <center><p class="teamname">ทีมA</p>
-        <p class="score">0</p></center>
-    </div></div>
-        <div align="center" class="col-md-3"> <img src="animal\geraf.png" alt="140x140" ><br>
-    <div class="span4 team" id="team1">
-        <center><p class="teamname">ทีมB</p>
-        <p class="score">0</p></center>
-    </div></div>
-        <div align="center" class="col-md-3"> <img src="animal\lion.png" alt="140x140" ><br>
-    <div class="span4 team" id="team2">
-        <center><p class="teamname">ทีมC</p>
-        <p class="score">0</p></center>
-    </div></div>
-        <div align="center" class="col-md-3"> <img src="animal\monky.png" alt="140x140" ><br>
-    <div class="span4 team" id="team3">
-        <center><p class="teamname">ทีมD</p>
-        <p class="score">0</p></center>
-    </div></div>
-  </div>
+<td>
+<div class="row">
+  <div align="center" class="col-md-3"> <img src="animal\frog.png" alt="140x140" ><br>
+  <div class="span4 team" id="team0">
+      <center><p class="teamname">ทีมA</p>
+      <p class="score" id="teamA">0</p></center>
+  </div></div>
+      <div align="center" class="col-md-3"> <img src="animal\geraf.png" alt="140x140" ><br>
+  <div class="span4 team" id="team1">
+      <center><p class="teamname">ทีมB</p>
+      <p class="score" id="teamB">0</p></center>
+  </div></div>
+      <div align="center" class="col-md-3"> <img src="animal\lion.png" alt="140x140" ><br>
+  <div class="span4 team" id="team2">
+      <center><p class="teamname">ทีมC</p>
+      <p class="score" id="teamC">0</p></center>
+  </div></div>
+      <div align="center" class="col-md-3"> <img src="animal\monky.png" alt="140x140" ><br>
+  <div  class="span4 team" id="team3">
+      <center><p class="teamname">ทีมD</p>
+      <p class="score" id="teamD">0</p></center>
+  </div></div>
+</div>
 
-  <div class="row">
-    <div align="center" class="col-md-3"> <img src="animal\pig.png" alt="140x140" ><br>
-    <div class="span4 team" id="team4">
-        <center><p class="teamname">ทีมE</p>
-        <p class="score">0</p></center>
-    </div></div>
-        <div align="center" class="col-md-3"> <img src="animal\panda.png" alt="140x140" ><br>
-    <div class="span4 team" id="team5">
-        <center><p class="teamname">ทีมF</p>
-        <p class="score">0</p></center>
-    </div></div>
-        <div align="center" class="col-md-3"> <img src="animal\sheep.png" alt="140x140" ><br>
-    <div class="span4 team" id="team6">
-        <center><p class="teamname">ทีมG</p>
-        <p class="score">0</p></center>
-    </div></div>
-        <div align="center" class="col-md-3"> <img src="animal\tiger.png" alt="140x140" ><br>
-    <div class="span4 team" id="team7">
-        <center><p class="teamname">ทีมH</p>
-        <p class="score">0</p></center>
-    </div></div>
-  </div>
-  </td>
-        </div>
+<div class="row">
+  <div align="center" class="col-md-3"> <img src="animal\pig.png" alt="140x140" ><br>
+  <div class="span4 team" id="team4">
+      <center><p class="teamname">ทีมE</p>
+      <p class="score" id="teamE">0</p></center>
+  </div></div>
+      <div align="center" class="col-md-3"> <img src="animal\panda.png" alt="140x140" ><br>
+  <div class="span4 team" id="team5">
+      <center><p class="teamname">ทีมF</p>
+      <p class="score" id="teamF">0</p></center>
+  </div></div>
+      <div align="center" class="col-md-3"> <img src="animal\sheep.png" alt="140x140" ><br>
+  <div class="span4 team" id="team6">
+      <center><p class="teamname">ทีมG</p>
+      <p class="score" id="teamG">0</p></center>
+  </div></div>
+      <div align="center" class="col-md-3"> <img src="animal\tiger.png" alt="140x140" ><br>
+  <div class="span4 team" id="team7">
+      <center><p class="teamname">ทีมH</p>
+      <p class="score" id="teamH">0</p></center>
+  </div></div>
+</div>
+</td>
       </div>
-    </body>
-</ul>
+    </div>
+</body>
 </html>

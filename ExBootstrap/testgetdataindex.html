@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.js"></script>
+<meta charset=utf-8 />
+<script>
+  
+function getDataFromDb()
+{
+	$.ajax({ 
+				url: "testgetdata.php" ,
+				type: "POST",
+				data: ''
+			})
+			.success(function(result) { 
+				var obj = jQuery.parseJSON(result);
+				console.log(obj[0]["Total"]);
+
+					//if(obj != '')
+					//{
+						  //$("#myTable tbody tr:not(:first-child)").remove();
+					//	  $("#myBody").empty();
+					//	  $.each(obj, function(key, val) {
+					//				var tr = "<tr>";
+					//				tr = tr + "<td>" + val["Total"] + "</td>";
+					//				tr = tr + "</tr>";
+					//				$('#myTable > tbody:last').append(tr);
+					//	  });
+					//}
+
+			});
+}
+
+setInterval(getDataFromDb, 100);   // 1000 = 1 second
+</script>
+</head>
+<body>
+ <center>
+<h1>My Web</h1>
+
+<table width="600" border="1" id="myTable">
+<!-- head table -->
+<thead>
+  <tr>
+    <td width="91"> <div align="center">Team </div></td>
+    <td width="98"> <div align="center">Point </div></td>
+  </tr>
+</thead>
+<!-- body dynamic rows -->
+<tbody id="myBody"></tbody>
+</table>
+
+ <center>
+</body>
+</html>
