@@ -7,7 +7,6 @@ mysql_connect($servername,$username,$password) or die("Unable to connect databas
 mysql_select_db($database) or die("Unable to select database");
 
 $strSQL = "SELECT SUM(PIT) AS Total FROM TurnTb GROUP BY Team";
-$maxSQL ="SELECT MAX(Total) FROM TurnTb";
 $objQuery = mysql_query($strSQL) or die (mysql_error());
 $intNumField = mysql_num_fields($objQuery);
 $resultArray = array();
@@ -23,6 +22,5 @@ array_push($resultArray,$arrCol);
 
 mysql_close();
 echo json_encode($resultArray);
-printf($maxSQL);
 
 ?>
