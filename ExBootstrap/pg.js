@@ -27,16 +27,17 @@ function pgstart(){
     turn=21;  
     count=0;
     $bar1.width(sec*(100/60)+"%");
-    $bar2.width(sec*(100/60)+"%");
+    $bar2.width(turn*(100/21)+"%");
     tplus();
     progresstime();}
 }
 function pgstop(){
-    sec=0;
-    turn=0; 
-    cturn=0; 
+    sec=60;
+    turn=21; 
+    cturn=0;
+    clearTimeout(cset); 
     $bar1.width(sec*(100/60)+"%");
-    $bar2.width(sec*(100/60)+"%");
+    $bar2.width(turn*(100/21)+"%");
 
 }
 function pgpause(){
@@ -61,7 +62,6 @@ function tplus() {
         turn-=1;
         cturn++;
         getDataFromDb();
-        $bar2.width(turn*(100/21)+"%");
     }
     if(sec==30){
         $bar1.removeClass();
@@ -83,14 +83,16 @@ function progresstime(){
     }
     if ($bar2.width()==0) {
         clearInterval(progress);
-        $bar1.width(0*(100/60)+"%");
+        $bar1.width(0+"%");
         pgstop();
     }
-    $bar1.text(sec +"sec");
+    else{
+        $bar2.width(turn*(100/21)+"%");
+    }
     $bar2.text(turn+'/21 turn');
     } , 800);
     if(turn==0){
-        alert("Winner");
+        alert(rank+"winner");
     }
 }
 function getDataFromDb()
@@ -104,14 +106,14 @@ function getDataFromDb()
         var obj = jQuery.parseJSON(result);
         var rank = 0;
         var max = -100;
-        document.getElementById("team0").innerHTML="<font color=\'red\'>" + obj[0]["Total"] + " </font>";
-        document.getElementById("team1").innerHTML="<font color=\'red\'>" + obj[1]["Total"] + " </font>";
-        document.getElementById("team2").innerHTML="<font color=\'red\'>" + obj[2]["Total"] + " </font>";
-        document.getElementById("team3").innerHTML="<font color=\'red\'>" + obj[3]["Total"] + " </font>";
-        document.getElementById("team4").innerHTML="<font color=\'red\'>" + obj[4]["Total"] + " </font>";
-        document.getElementById("team5").innerHTML="<font color=\'red\'>" + obj[5]["Total"] + " </font>";
-        document.getElementById("team6").innerHTML="<font color=\'red\'>" + obj[6]["Total"] + " </font>";
-        document.getElementById("team7").innerHTML="<font color=\'red\'>" + obj[7]["Total"] + " </font>";
+        document.getElementById("team0").innerHTML="<h2>"+"<font color=\'red\'>" + obj[0]["Total"] + " </font>"+"</h2>";
+        document.getElementById("team1").innerHTML="<h2>"+"<font color=\'red\'>" + obj[1]["Total"] + " </font>"+"</h2>";
+        document.getElementById("team2").innerHTML="<h2>"+"<font color=\'red\'>" + obj[2]["Total"] + " </font>"+"</h2>";
+        document.getElementById("team3").innerHTML="<h2>"+"<font color=\'red\'>" + obj[3]["Total"] + " </font>"+"</h2>";
+        document.getElementById("team4").innerHTML="<h2>"+"<font color=\'red\'>" + obj[4]["Total"] + " </font>"+"</h2>";
+        document.getElementById("team5").innerHTML="<h2>"+"<font color=\'red\'>" + obj[5]["Total"] + " </font>"+"</h2>";
+        document.getElementById("team6").innerHTML="<h2>"+"<font color=\'red\'>" + obj[6]["Total"] + " </font>"+"</h2>";
+        document.getElementById("team7").innerHTML="<h2>"+"<font color=\'red\'>" + obj[7]["Total"] + " </font>"+"</h2>";
         for(var i=0;i<7;i++){
             if(max<obj[i]["Total"]){
                 max=obj[i]["Total"];
@@ -119,7 +121,6 @@ function getDataFromDb()
             }
         }
         document.getElementById('team'+rank).innerHTML="<font color=\'blue\'>" + max + " </font>";
-        $('#spanteam'+rank).css("color","white");
     console.log(max);
       });
 }

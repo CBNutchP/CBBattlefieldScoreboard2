@@ -12,7 +12,7 @@
 </style>
 <body  onkeydown="keydown(event);">
   <div class="container">
-<h1><span class="label label-default" id ="cturn">Turn:</span><span class="label label-default" id="OutputText"></div></h1>
+<h3><span class="label label-default" id ="cturn">Turn:</span><span class="label label-default" id="OutputText"></span></div></h3>
   <div class="progress">
   <div class="progress-bar progress-bar- f progress-bar-striped active" role="progressbar" aria-valuemax="100" style="width: 100%" id="timebar">
   </div>
@@ -25,17 +25,13 @@
   <script src="bootstrap\js\bootstrap.js"></script>
   <script src="jquery-2.1.1.min.js"></script>
   <script src="pg.js"></script>
-<button id="btn1" onclick="pgstart()">START</button>
-<button id="btn2" onclick="pgstop()">STOP</button>
-<button id="btn3" onclick="pgpause()">PAUSE</button> <br/>
-<script type="text/javascript" src="jquery.js"></script>
-
-
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
   <style>
+
     body
     {
-      background: black;
+      background: url(BGbattle.jpg);
+      cursor: none; 
     }
 
     p{
@@ -43,6 +39,7 @@
       color:white;
     }
     </style>
+    <div class="imageholder" style="background-image:url(./Users/VAIO/Desktop/BGbattle.jpg);"></div>
     <div class="container">
       <div class="row">
         <div class="span6">
@@ -58,22 +55,18 @@
 <div class="row">
   <div align="center" class="col-md-3"> <img src="animal\frog.png" alt="14 0x140" ><br>
   <div class="span4 team" id="spanteam0">
-      <center><p class="teamname">ทีมA</p>
       <p class="score" id="team0">0</p></center>
   </div></div>
       <div align="center" class="col-md-3"> <img src="animal\geraf.png" alt="140x140" ><br>
   <div class="span4 team" id="spanteam1">
-      <center><p class="teamname">ทีมB</p>
       <p class="score" id="team1">0</p></center>
   </div></div>
       <div align="center" class="col-md-3"> <img src="animal\lion.png" alt="140x140" ><br>
   <div class="span4 team" id="spanteam2">
-      <center><p class="teamname">ทีมC</p>
       <p class="score" id="team2">0</p></center>
   </div></div>
       <div align="center" class="col-md-3"> <img src="animal\monky.png" alt="140x140" ><br>
   <div  class="span4 team" id="spanteam3">
-      <center><p class="teamname">ทีมD</p>
       <p class="score" id="team3">0</p></center>
   </div></div>
 </div>
@@ -81,22 +74,18 @@
 <div class="row">
   <div align="center" class="col-md-3"> <img src="animal\pig.png" alt="140x140" ><br>
   <div class="span4 team" id="spanteam4">
-      <center><p class="teamname">ทีมE</p>
       <p class="score" id="team4">0</p></center>
   </div></div>
       <div align="center" class="col-md-3"> <img src="animal\panda.png" alt="140x140" ><br>
   <div class="span4 team" id="spanteam5">
-      <center><p class="teamname">ทีมF</p>
       <p class="score" id="team5">0</p></center>
   </div></div>
       <div align="center" class="col-md-3"> <img src="animal\sheep.png" alt="140x140" ><br>
   <div class="span4 team" id="spanteam6">
-      <center><p class="teamname">ทีมG</p>
       <p class="score" id="team6">0</p></center>
   </div></div>
       <div align="center" class="col-md-3"> <img src="animal\tiger.png" alt="140x140" ><br>
   <div class="span4 team" id="spanteam7">
-      <center><p class="teamname">ทีมH</p>
       <p class="score" id="team7">0</p></center>
   </div></div>
 </div>
