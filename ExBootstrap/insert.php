@@ -142,7 +142,7 @@ if($EKO == '1'){
 mysql_connect($servername,$username,$password) or die("Unable to connect database");
 mysql_select_db($database) or die("Unable to select database");
 $query = "INSERT INTO TurnTb VALUES ('$Turn','$ETeam','$ECMD1','$ECMD2','$EPIT')";
-mysql_query($query);
+mysql_query($query);	
 mysql_select_db($database) or die("Unable to select database");
 $query = "INSERT INTO PenaltyTb VALUES ('$Turn','$ETeam','$EFoul')";
 mysql_query($query);
