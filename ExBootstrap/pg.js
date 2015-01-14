@@ -122,5 +122,6 @@ function getDataFromDb()
         }
         document.getElementById('team'+rank).innerHTML="<font color=\'blue\'>" + max + " </font>";
     console.log(max);
+    console.log(result);
       });
 }

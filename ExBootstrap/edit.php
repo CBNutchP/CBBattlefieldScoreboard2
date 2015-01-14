@@ -3,7 +3,7 @@ $servername="localhost";
 $username="root";
 $password="mysql";
 $database="BattleFieldScore";
-$Turn=$_POST['cturn'];
+$Turn=$_POST['BTurn'];
 $BTeam=$_POST['BTeam'];
 $BCMD1=$_POST['BCMD1'];
 $BCMD2=$_POST['BCMD2'];
@@ -32,7 +32,7 @@ mysql_query($query);
 mysql_connect($servername,$username,$password) or die("Unable to connect database");
 mysql_select_db($database) or die("Unable to select database");
 $query = "UPDATE KO SET KO='BKO' WHERE Turn=$BTurn,Team=$BTeam ";
-mysql_query($query);
+mysql_query($query);้เ
 mysql_close(); 
 echo "แก้แต้มแล้ว";
 echo($BTurn);

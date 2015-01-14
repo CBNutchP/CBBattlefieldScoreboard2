@@ -6,13 +6,14 @@
   </head>
   <script src="jquery-2.1.1.min.js"></script>
   <script src="bootstrap\js\bootstrap.js"></script>
-  <script src="Edit.js"></script>
+  <script src="Edit2.js"></script>
   <script type="text/javascript">
     function cloneTurn(){
       $('#demolist li').on('click', function(){
         $('#datebox').val($(this).text());
     });
     }
+    shTurn();
   </script>
   <body>
     <div class="container">
@@ -28,7 +29,6 @@
                         <span class="caret"></span>
                     </button>
                     <ul id="demolist" class="dropdown-menu">
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="cloneTurn()">1</a></li>
 
                     </ul>
                 </div>
@@ -39,6 +39,21 @@
   <tr>
     <td><h2>Team</h2></td><td><h2>Commander1</h2></td><td><h2>Commander2</h2></td><td><h2>K.O</h2></td><td><h2>Penalty</h2></td>
   <tr>
+              <td> Team: <label type="text">A</label> </td>
+              <input type="hidden" name="ATeam" value="A">
+              <td> Att1:<input type="radio" name="ACMD1" value="A">
+              Def1:<input type="radio" name="ACMD1" value="D">
+              charge1:<input type="radio" name="ACMD1" value="C">
+              refill1:<input type="radio" name="ACMD1" value="R"></td>
+              <td> Att2:<input type="radio" name="ACMD2" value="A">
+              Def2:<input type="radio" name="ACMD2" value="D">
+              charge2:<input type="radio" name="ACMD2" value="C">
+              refill2:<input type="radio" name="ACMD2" value="R"></td>
+              <td>KO: <input type="checkbox" name="AKO" value="1"></td>
+              <td><input type="number" name="APEN" placeholder="Penalty"></td>
+</tr>
+
+ <tr>
               <td> Team: <label type="text">B</label> </td>
               <input type="hidden" name="BTeam" value="B">
               <td> Att1:<input type="radio" name="BCMD1" value="A">
@@ -52,6 +67,97 @@
               <td>KO: <input type="checkbox" name="BKO" value="1"></td>
               <td><input type="number" name="BPEN" placeholder="Penalty"></td>
 </tr>
+
+ <tr>
+              <td> Team: <label type="text">C</label> </td>
+              <input type="hidden" name="CTeam" value="B">
+              <td> Att1:<input type="radio" name="CCMD1" value="A">
+              Def1:<input type="radio" name="CCMD1" value="D">
+              charge1:<input type="radio" name="CCMD1" value="C">
+              refill1:<input type="radio" name="CCMD1" value="R"></td>
+              <td> Att2:<input type="radio" name="CCMD2" value="A">
+              Def2:<input type="radio" name="CCMD2" value="D">
+              charge2:<input type="radio" name="CCMD2" value="C">
+              refill2:<input type="radio" name="CCMD2" value="R"></td>
+              <td>KO: <input type="checkbox" name="CKO" value="1"></td>
+              <td><input type="number" name="CPEN" placeholder="Penalty"></td>
+</tr>
+
+ <tr>
+              <td> Team: <label type="text">D</label> </td>
+              <input type="hidden" name="DTeam" value="B">
+              <td> Att1:<input type="radio" name="CCMD1" value="A">
+              Def1:<input type="radio" name="DCMD1" value="D">
+              charge1:<input type="radio" name="DCMD1" value="C">
+              refill1:<input type="radio" name="DCMD1" value="R"></td>
+              <td> Att2:<input type="radio" name="DCMD2" value="A">
+              Def2:<input type="radio" name="DCMD2" value="D">
+              charge2:<input type="radio" name="DCMD2" value="C">
+              refill2:<input type="radio" name="DCMD2" value="R"></td>
+              <td>KO: <input type="checkbox" name="DKO" value="1"></td>
+              <td><input type="number" name="DPEN" placeholder="Penalty"></td>
+</tr>
+
+ <tr>
+              <td> Team: <label type="text">E</label> </td>
+              <input type="hidden" name="ETeam" value="B">
+              <td> Att1:<input type="radio" name="ECMD1" value="A">
+              Def1:<input type="radio" name="ECMD1" value="D">
+              charge1:<input type="radio" name="ECMD1" value="C">
+              refill1:<input type="radio" name="ECMD1" value="R"></td>
+              <td> Att2:<input type="radio" name="ECMD2" value="A">
+              Def2:<input type="radio" name="ECMD2" value="D">
+              charge2:<input type="radio" name="ECMD2" value="C">
+              refill2:<input type="radio" name="ECMD2" value="R"></td>
+              <td>KO: <input type="checkbox" name="EKO" value="1"></td>
+              <td><input type="number" name="EPEN" placeholder="Penalty"></td>
+</tr>
+
+ <tr>
+              <td> Team: <label type="text">F</label> </td>
+              <input type="hidden" name="FTeam" value="B">
+              <td> Att1:<input type="radio" name="FCMD1" value="A">
+              Def1:<input type="radio" name="FCMD1" value="D">
+              charge1:<input type="radio" name="FCMD1" value="C">
+              refill1:<input type="radio" name="FCMD1" value="R"></td>
+              <td> Att2:<input type="radio" name="FCMD2" value="A">
+              Def2:<input type="radio" name="FCMD2" value="D">
+              charge2:<input type="radio" name="FCMD2" value="C">
+              refill2:<input type="radio" name="FCMD2" value="R"></td>
+              <td>KO: <input type="checkbox" name="FKO" value="1"></td>
+              <td><input type="number" name="FPEN" placeholder="Penalty"></td>
+</tr>
+
+ <tr>
+              <td> Team: <label type="text">G</label> </td>
+              <input type="hidden" name="GTeam" value="B">
+              <td> Att1:<input type="radio" name="GCMD1" value="A">
+              Def1:<input type="radio" name="GCMD1" value="D">
+              charge1:<input type="radio" name="GCMD1" value="C">
+              refill1:<input type="radio" name="GCMD1" value="R"></td>
+              <td> Att2:<input type="radio" name="GCMD2" value="A">
+              Def2:<input type="radio" name="GCMD2" value="D">
+              charge2:<input type="radio" name="GCMD2" value="C">
+              refill2:<input type="radio" name="GCMD2" value="R"></td>
+              <td>KO: <input type="checkbox" name="GKO" value="1"></td>
+              <td><input type="number" name="GPEN" placeholder="Penalty"></td>
+</tr>
+
+ <tr>
+              <td> Team: <label type="text">H</label> </td>
+              <input type="hidden" name="HTeam" value="B">
+              <td> Att1:<input type="radio" name="HCMD1" value="A">
+              Def1:<input type="radio" name="HCMD1" value="D">
+              charge1:<input type="radio" name="HCMD1" value="C">
+              refill1:<input type="radio" name="HCMD1" value="R"></td>
+              <td> Att2:<input type="radio" name="HCMD2" value="A">
+              Def2:<input type="radio" name="HCMD2" value="D">
+              charge2:<input type="radio" name="HCMD2" value="C">
+              refill2:<input type="radio" name="HCMD2" value="R"></td>
+              <td>KO: <input type="checkbox" name="HKO" value="1"></td>
+              <td><input type="number" name="HPEN" placeholder="Penalty"></td>
+</tr>
+
 </table> 
               <input type="submit" class="btn btn-success" value="Update"> 
               <input type="reset" class="btn btn-warning" value="Reset">
