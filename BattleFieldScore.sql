@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.9
+-- version 4.3.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 05, 2015 at 07:38 AM
--- Server version: 5.6.20
+-- Generation Time: Jan 16, 2015 at 04:11 AM
+-- Server version: 5.6.22
 -- PHP Version: 5.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -65,6 +65,7 @@ CREATE TABLE IF NOT EXISTS `KO` (
 --
 
 INSERT INTO `KO` (`Turn`, `Team`, `KO`) VALUES
+(0, '', ''),
 (1, 'A', ''),
 (1, 'B', ''),
 (1, 'C', ''),
@@ -349,7 +350,7 @@ CREATE TABLE IF NOT EXISTS `TurnTb` (
 INSERT INTO `TurnTb` (`Turn`, `Team`, `Commander1`, `Commannder2`, `PIT`) VALUES
 (1, 'A', 'A', 'A', 0),
 (1, 'B', 'A', 'D', -4),
-(1, 'C', 'A', 'A', -2),
+(1, 'C', 'A', 'A', 9),
 (1, 'D', 'A', 'D', 1),
 (1, 'E', 'D', 'A', 0),
 (1, 'F', 'D', 'D', -5),
@@ -421,28 +422,7 @@ INSERT INTO `TurnTb` (`Turn`, `Team`, `Commander1`, `Commannder2`, `PIT`) VALUES
 (9, 'H', '', '', 0),
 (10, 'A', '', '', 0),
 (10, 'B', '', '', 0),
-(10, 'C', '', '', 0),
-(10, 'D', '', '', 0),
-(10, 'E', '', '', 0),
-(10, 'F', '', '', 0),
-(10, 'G', '', '', 0),
-(10, 'H', '', '', 0),
-(11, 'A', 'D', 'D', 0),
-(11, 'B', '', '', 0),
-(11, 'C', '', '', 0),
-(11, 'D', '', '', 0),
-(11, 'E', '', '', 0),
-(11, 'F', '', '', 0),
-(11, 'G', '', '', 0),
-(11, 'H', '', '', 0),
-(12, 'A', 'D', 'D', 0),
-(12, 'B', '', '', 0),
-(12, 'C', '', '', 0),
-(12, 'D', '', '', 0),
-(12, 'E', '', '', 0),
-(12, 'F', '', '', 0),
-(12, 'G', '', '', 0),
-(12, 'H', '', '', 0);
+(10, 'C', '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -452,25 +432,25 @@ INSERT INTO `TurnTb` (`Turn`, `Team`, `Commander1`, `Commannder2`, `PIT`) VALUES
 -- Indexes for table `CountTurn`
 --
 ALTER TABLE `CountTurn`
- ADD PRIMARY KEY (`Turn`);
+  ADD PRIMARY KEY (`Turn`);
 
 --
 -- Indexes for table `KO`
 --
 ALTER TABLE `KO`
- ADD PRIMARY KEY (`Turn`,`Team`);
+  ADD PRIMARY KEY (`Turn`,`Team`);
 
 --
 -- Indexes for table `PenaltyTb`
 --
 ALTER TABLE `PenaltyTb`
- ADD PRIMARY KEY (`Turn`,`Team`);
+  ADD PRIMARY KEY (`Turn`,`Team`);
 
 --
 -- Indexes for table `TurnTb`
 --
 ALTER TABLE `TurnTb`
- ADD PRIMARY KEY (`Turn`,`Team`);
+  ADD PRIMARY KEY (`Turn`,`Team`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
