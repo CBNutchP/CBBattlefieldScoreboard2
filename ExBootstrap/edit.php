@@ -27,11 +27,11 @@ $query = "UPDATE TurnTb SET Commander1='$ACMD1',Commander2='$ACMD2',PIT='$APIT' 
 mysql_query($query);
 mysql_connect($servername,$username,$password) or die("Unable to connect database");
 mysql_select_db($database) or die("Unable to select database");
-$query = "UPDATE PenaltyTb SET Foul='AFoul'  WHERE Turn=$ATurn AND Team=$ATeam";
+$query = "UPDATE PenaltyTb SET Foul='AFoul'  WHERE Turn=$Turn AND Team=$ATeam";
 mysql_query($query);
 mysql_connect($servername,$username,$password) or die("Unable to connect database");
 mysql_select_db($database) or die("Unable to select database");
-$query = "UPDATE KO SET KO='AKO' WHERE Turn=$ATurn AND Team=$ATeam ";
+$query = "UPDATE KO SET KO='AKO' WHERE Turn=$Turn AND Team=$ATeam ";
 mysql_query($query);
 $BTeam=$_POST['BTeam'];
 $BCMD1=$_POST['BCMD1'];
@@ -56,11 +56,11 @@ $query = "UPDATE TurnTb SET Commander1='$BCMD1',Commander2='$BCMD2',PIT='$BPIT' 
 mysql_query($query);
 mysql_connect($servername,$username,$password) or die("Unable to connect database");
 mysql_select_db($database) or die("Unable to select database");
-$query = "UPDATE PenaltyTb SET Foul='BFoul'  WHERE Turn=$BTurn,Team=$BTeam";
+$query = "UPDATE PenaltyTb SET Foul='BFoul'  WHERE Turn=$Turn,Team=$BTeam";
 mysql_query($query);
 mysql_connect($servername,$username,$password) or die("Unable to connect database");
 mysql_select_db($database) or die("Unable to select database");
-$query = "UPDATE KO SET KO='BKO' WHERE Turn=$BTurn,Team=$BTeam ";
+$query = "UPDATE KO SET KO='BKO' WHERE Turn=$Turn,Team=$BTeam ";
 mysql_query($query);
 
 mysql_close(); 
