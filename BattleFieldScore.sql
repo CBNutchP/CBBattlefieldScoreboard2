@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2015 at 04:11 AM
+-- Generation Time: Jan 26, 2015 at 04:04 AM
 -- Server version: 5.6.22
 -- PHP Version: 5.3.29
 
@@ -65,7 +65,6 @@ CREATE TABLE IF NOT EXISTS `KO` (
 --
 
 INSERT INTO `KO` (`Turn`, `Team`, `KO`) VALUES
-(0, '', ''),
 (1, 'A', ''),
 (1, 'B', ''),
 (1, 'C', ''),
@@ -204,10 +203,6 @@ CREATE TABLE IF NOT EXISTS `PenaltyTb` (
 --
 
 INSERT INTO `PenaltyTb` (`Turn`, `Team`, `Foul`) VALUES
-(0, '', 0),
-(0, 'B', 0),
-(0, 'D', 0),
-(0, 'E', 0),
 (1, 'A', -3),
 (1, 'B', 0),
 (1, 'C', 0),
