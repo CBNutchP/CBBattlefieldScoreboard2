@@ -1,5 +1,6 @@
 <html>
   <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=UTF-8">
     <title>Battle Field Score</title>
   </head>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
@@ -16,7 +17,18 @@
       count =1;
       f.Turn.value = count;
     }
+    function reStart()
+    {
+    if (confirm("ยืนยันการล้างคะแนน!") == true) 
+    {
+      window.location.href = "resetGame.php";
+    } 
+    else 
+    {
 
+    }
+    document.getElementById("demo").innerHTML = x;
+    }
     </script>
     <script type="text/javascript"></script>
       <ul class="nav nav-tabs" role="tablist">
@@ -33,7 +45,7 @@
             <div class="span6">
               <form action="insert.php" method="post" target="iframe_target">
               <iframe id="iframe_target" name="iframe_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
-              <h3><span class="label label-default">Turn:</span><input type="hidden" name="Turn" value="0"><input type ="number" name="dcount"value = "1"><br><label></label></h3>
+              <h3><span class="label label-default">Turn:</span><input type="hidden" name="Turn" value="1"><input type ="number" name="dcount"value = "1"><br><label></label></h3>
               <br/>
 
 <table class="table" border="1">
@@ -160,7 +172,8 @@
 </table> 
 
               <input type="submit" class="btn btn-success" value="Add" onclick="myFun(form)"> 
-              <input type="reset" class="btn btn-warning" value="Reset">
+              <input type="reset" class="btn btn-warning" value="Clear">
+              <button class="btn btn-Danger" onclick="reStart()">reGame</button>
             </div>
         </div>
         <section>

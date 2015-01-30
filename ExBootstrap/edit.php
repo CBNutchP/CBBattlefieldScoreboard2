@@ -1,8 +1,5 @@
 <?php
-$servername="localhost";
-$username="root";
-$password="mysql";
-$database="BattleFieldScore";
+include("connect.php");
 $Turn=$_POST['cturn'];
 $ATeam=$_POST['ATeam'];
 $ACMD1=$_POST['ACMD1'];
@@ -140,8 +137,6 @@ else{
 if($HKO == '1'){
 	$HPIT =$HPIT-5 + $HFoul;
 }
-mysql_connect($servername,$username,$password) or die("Unable to connect database");
-mysql_select_db($database) or die("Unable to select database");
 mysql_query( "UPDATE TurnTb SET Commander1='$ACMD1',Commander2='$ACMD2',PIT='$APIT' WHERE Turn='$Turn' AND Team='$ATeam' ");
 mysql_query( "UPDATE PenaltyTb SET Foul='$AFoul'  WHERE Turn='$Turn' AND Team='$ATeam'");
 mysql_query( "UPDATE KO SET KO='$AKO' WHERE Turn='$Turn' AND Team='$ATeam' ");

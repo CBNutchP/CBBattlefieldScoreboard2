@@ -26,7 +26,6 @@ else{
 if($AKO == '1'){
 	$APIT =$APIT-5 + $AFoul;
 }
-print_r($APIT);
 mysql_connect($servername,$username,$password) or die("Unable to connect database");
 mysql_select_db($database) or die("Unable to select database");
 $query = "INSERT INTO TurnTb VALUES ('$Turn','$ATeam','$ACMD1','$ACMD2','$APIT')";

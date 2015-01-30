@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 26, 2015 at 04:04 AM
+-- Generation Time: Jan 26, 2015 at 07:36 AM
 -- Server version: 5.6.22
 -- PHP Version: 5.3.29
 
@@ -203,11 +203,11 @@ CREATE TABLE IF NOT EXISTS `PenaltyTb` (
 --
 
 INSERT INTO `PenaltyTb` (`Turn`, `Team`, `Foul`) VALUES
-(1, 'A', -3),
+(1, 'A', 0),
 (1, 'B', 0),
 (1, 'C', 0),
 (1, 'D', 0),
-(1, 'E', -1),
+(1, 'E', 0),
 (1, 'F', 0),
 (1, 'G', 0),
 (1, 'H', 0),
@@ -334,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `TurnTb` (
   `Turn` int(2) NOT NULL,
   `Team` varchar(1) NOT NULL,
   `Commander1` varchar(1) NOT NULL,
-  `Commannder2` varchar(1) NOT NULL,
+  `Commander2` varchar(1) NOT NULL,
   `PIT` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -342,15 +342,15 @@ CREATE TABLE IF NOT EXISTS `TurnTb` (
 -- Dumping data for table `TurnTb`
 --
 
-INSERT INTO `TurnTb` (`Turn`, `Team`, `Commander1`, `Commannder2`, `PIT`) VALUES
-(1, 'A', 'A', 'A', 0),
-(1, 'B', 'A', 'D', -4),
-(1, 'C', 'A', 'A', 9),
-(1, 'D', 'A', 'D', 1),
-(1, 'E', 'D', 'A', 0),
-(1, 'F', 'D', 'D', -5),
-(1, 'G', 'A', 'A', 3),
-(1, 'H', 'D', 'D', 0),
+INSERT INTO `TurnTb` (`Turn`, `Team`, `Commander1`, `Commander2`, `PIT`) VALUES
+(1, 'A', '', '', 0),
+(1, 'B', '', '', 0),
+(1, 'C', '', '', 0),
+(1, 'D', '', '', 0),
+(1, 'E', '', '', 0),
+(1, 'F', '', '', 0),
+(1, 'G', '', '', 0),
+(1, 'H', '', '', 0),
 (2, 'A', '', '', -5),
 (2, 'B', 'A', 'D', 1),
 (2, 'C', 'D', 'D', 0),
@@ -417,7 +417,20 @@ INSERT INTO `TurnTb` (`Turn`, `Team`, `Commander1`, `Commannder2`, `PIT`) VALUES
 (9, 'H', '', '', 0),
 (10, 'A', '', '', 0),
 (10, 'B', '', '', 0),
-(10, 'C', '', '', 0);
+(10, 'C', '', '', 0),
+(10, 'D', '', '', 0),
+(10, 'E', '', '', 0),
+(10, 'F', '', '', 0),
+(10, 'G', '', '', 0),
+(10, 'H', '', '', 0),
+(11, 'A', 'A', 'A', -2),
+(11, 'B', 'D', 'A', 1),
+(11, 'C', 'D', 'D', 0),
+(11, 'D', '', '', 0),
+(11, 'E', '', '', 0),
+(11, 'F', '', '', 0),
+(11, 'G', '', '', 0),
+(11, 'H', '', '', 0);
 
 --
 -- Indexes for dumped tables

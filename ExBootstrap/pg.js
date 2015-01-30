@@ -1,9 +1,11 @@
 var sec=60;
+var wsec=2;
 var turn=21;
 var cturn=0;
 var $bar1 = $('#timebar');
 var $bar2 = $('#overallbar');
 var cset;
+var wcset;
 var boolp =false;
 var cp=0;
 function keydown(e){
@@ -51,23 +53,33 @@ function pgpause(){
     }
     cp++;
 }
+function twait() {
+    wsec-=1;
+    if (wsec==0) {
+        $bar1.removeClass();
+        $bar1.addClass('progress-bar progress-bar-success progress-bar-striped active');
+        wsec=1;
+    }
+    if (wsec>0) {wcset=setTimeout("twait()",1000);}
+}
 function tplus() {
     sec-=1;
-    document.getElementById("OutputText").innerHTML="<font color=\'red\'>" + (sec+1) + " </font> Sec.";
+    document.getElementById("OutputText").innerHTML="<font color=\'red\'>" + (sec) + " </font> Sec.";
     document.getElementById("cturn").innerHTML="<font color=\'white\'>"+"Turn:" + cturn + "/21";
     if (sec==0) {
         $bar1.removeClass();
         $bar1.addClass('progress-bar progress-bar-success progress-bar-striped active');
-        sec=60;
+        twait();
         turn-=1;
         cturn++;
         getDataFromDb();
+        sec=60;
     }
-    if(sec==30){
+    if(sec==29){
         $bar1.removeClass();
          $bar1.addClass('progress-bar progress-bar-warning progress-bar-striped active');
     }
-    if(sec==15){
+    if(sec==14){
         $bar1.removeClass();
          $bar1.addClass('progress-bar progress-bar-danger progress-bar-striped active');
     }
@@ -77,7 +89,7 @@ function tplus() {
 function progresstime(){
      var progress = setInterval(function() {
     if ($bar1.width()==0) {
-        $bar1.width(sec*(100/60)+"%");
+        $bar1.width(0+"%");
     } else {
         $bar1.width(sec*(100/60)+"%");
     }

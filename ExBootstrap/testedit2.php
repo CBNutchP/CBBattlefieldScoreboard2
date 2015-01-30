@@ -1,10 +1,5 @@
 <?php
-$servername="localhost";
-$username="root";
-$password="mysql";
-$database="BattleFieldScore";
-mysql_connect($servername,$username,$password) or die("Unable to connect database");
-mysql_select_db($database) or die("Unable to select database");
+include("connect.php");
 
 $strSQL = "SELECT Turn FROM CountTurn";
 $objQuery = mysql_query($strSQL) or die (mysql_error());
