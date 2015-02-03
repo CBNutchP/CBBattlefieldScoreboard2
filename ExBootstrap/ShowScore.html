@@ -12,10 +12,11 @@
       color:white;
 }
 </style>
-      <ul class="nav nav-tabs" role="tablist">
+      <nav class="nav nav-tabs" role="tablist">
+            <button class="btn" disabled>Score</button>
             <button class="btn btn-danger" onclick="window.location.href='InputScore.html'">Input</button>
             <button class="btn btn-danger"  onclick="window.location.href='Edit.html'">Edit</button>
-      </ul>
+      </nav>
 <form>
 <body  onkeydown="keydown(event);">
   <div class="container">
@@ -32,9 +33,6 @@
   <script src="bootstrap\js\bootstrap.js"></script>
   <script src="jquery-2.1.1.min.js"></script>
   <script src="pg.js"></script>
-  <script type="text/javascript">
-      getDataFromDb();
-  </script>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
   <style>
 

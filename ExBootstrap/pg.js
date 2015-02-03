@@ -75,13 +75,19 @@ function tplus() {
         getDataFromDb();
         sec=60;
     }
+    if(sec==44){
+         getDataFromDb();
+    }
+
     if(sec==29){
         $bar1.removeClass();
          $bar1.addClass('progress-bar progress-bar-warning progress-bar-striped active');
+         getDataFromDb();
     }
     if(sec==14){
         $bar1.removeClass();
          $bar1.addClass('progress-bar progress-bar-danger progress-bar-striped active');
+         getDataFromDb();
     }
     if (sec>0) {cset=setTimeout("tplus()",1000);}
 }
@@ -117,7 +123,7 @@ function getDataFromDb()
       .success(function(result) { 
         var obj = jQuery.parseJSON(result);
         var rank = 0;
-        var max = -100;
+        var max = -30;
         document.getElementById("team0").innerHTML="<h2>"+"<font color=\'red\'>" + obj[0]["Total"] + " </font>"+"</h2>";
         document.getElementById("team1").innerHTML="<h2>"+"<font color=\'red\'>" + obj[1]["Total"] + " </font>"+"</h2>";
         document.getElementById("team2").innerHTML="<h2>"+"<font color=\'red\'>" + obj[2]["Total"] + " </font>"+"</h2>";
@@ -126,14 +132,23 @@ function getDataFromDb()
         document.getElementById("team5").innerHTML="<h2>"+"<font color=\'red\'>" + obj[5]["Total"] + " </font>"+"</h2>";
         document.getElementById("team6").innerHTML="<h2>"+"<font color=\'red\'>" + obj[6]["Total"] + " </font>"+"</h2>";
         document.getElementById("team7").innerHTML="<h2>"+"<font color=\'red\'>" + obj[7]["Total"] + " </font>"+"</h2>";
-        for(var i=0;i<7;i++){
+        for(var i=0;i<7;i++){           
             if(max<obj[i]["Total"]){
                 max=obj[i]["Total"];
                 rank=i;
             }
         }
+        
         document.getElementById('team'+rank).innerHTML="<font color=\'blue\'>" + max + " </font>";
+        reGetdata();
     console.log(max);
     console.log(result);
       });
+}
+function reGetdata(){
+  for(var a=0;a<7;a++){           
+            if(max=obj[a]["Total"]){
+                document.getElementById('team'+rank).innerHTML="<font color=\'blue\'>" + obj[a]["Total"] + " </font>";
+            }
+        }  
 }
