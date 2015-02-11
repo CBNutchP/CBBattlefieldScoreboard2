@@ -40,9 +40,10 @@
       <div class="container">
               <form action="insert.php" method="post" target="iframe_target">
               <iframe id="iframe_target" name="iframe_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
-              <h3><span class="label label-default">Turn:</span><input type="hidden" name="Turn" value="1"><input type ="number" name="dcount"value = "1"><br><label></label></h3>
-              <br/>
-
+              <h3><span class="label label-default">Turn:</span><input type="hidden" name="Turn" value="1"><input type ="number" name="dcount"value = "1"><br></h3>
+              <input type="submit" class="btn btn-success" value="Add" onclick="myFun(form)"> 
+              <input type="reset" class="btn btn-warning" value="Clear">
+              <a class="btn btn-Danger" onclick="reStart()">reGame</a>
 <table class="table" border="1">
   <tr>
     <td><h2>Team</h2></td><td><h2>Commander1</h2></td><td><h2>Commander2</h2></td><td><h2>K.O</h2></td><td><h2>Penalty</h2></td>
@@ -166,10 +167,6 @@
               <td><input type="number" name="HPEN" placeholder="Penalty"></td>
 </tr>
 </table> 
-
-              <input type="submit" class="btn btn-success" value="Add" onclick="myFun(form)"> 
-              <input type="reset" class="btn btn-warning" value="Clear">
-              <a class="btn btn-Danger" onclick="reStart()">reGame</a>
       </div>
     </body>
 </html>
