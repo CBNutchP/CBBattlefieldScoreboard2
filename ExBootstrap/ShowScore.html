@@ -1,105 +1,138 @@
 <html>
 <head>
-  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Battle Field</title>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Battle Field</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="imgstyle.css"/>
 </head>
 <style>
 .container {
-  margin-top: 15px;
-  font-size:15px;
-      color:white;
+	margin-top: 15px;
+	font-size:15px;
+			color:white;
 }
 </style>
-      <nav class="nav nav-tabs" role="tablist">
-            <button class="btn" disabled>Score</button>
-            <button class="btn btn-danger" onclick="window.location.href='InputScore.html'">Input</button>
-            <button class="btn btn-danger"  onclick="window.location.href='Edit.html'">Edit</button>
-      </nav>
+			<nav class="nav nav-tabs" role="tablist">
+						<button class="btn" disabled>Score</button>
+						<button class="btn btn-danger" onclick="window.location.href='InputScore.html'">Input</button>
+						<button class="btn btn-danger"  onclick="window.location.href='Edit.html'">Edit</button>
+			</nav>
 <form>
 <body  onkeydown="keydown(event);">
-  <div class="container">
+	<div class="container">
 <h3><span class="label label-default" id ="cturn">Turn:</span><span class="label label-default" id="OutputText"></span></div></h3>
-  <div class="progress">
-  <div class="progress-bar progress-bar- f progress-bar-striped active" role="progressbar" aria-valuemax="100" style="width: 100%" id="timebar">
-  </div>
+	<div class="progress">
+	<div class="progress-bar progress-bar- f progress-bar-striped active" role="progressbar" aria-valuemax="100" style="width: 100%" id="timebar">
+	</div>
 </div>
 </div>
-  <div class="progress">
-  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuemax="100" style="width: 100%" id="overallbar">
-  </div>
-  </div>
-  <script src="bootstrap\js\bootstrap.js"></script>
-  <script src="jquery-2.1.1.min.js"></script>
-  <script src="pg.js"></script>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
-  <style>
+	<div class="progress">
+	<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuemax="100" style="width: 100%" id="overallbar">
+	</div>
+	</div>
+	<script src="bootstrap\js\bootstrap.js"></script>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script src="pg.js"></script>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+	<style>
 
-    body
-    {
-      background: url(BGbattle.jpg);
-      cursor: none; 
-    }
+		body
+		{
+			background: url(BGbattle.jpg);
+			cursor: none; 
+		}
 
-    p{
-      font-size:36px;
-      color:white;
-    }
-    </style>
-    <div class="imageholder" style="background-image:url(./Users/VAIO/Desktop/BGbattle.jpg);"></div>
-    <div class="container">
-      <div class="row">
-        <div class="span6">
-          <div class="bgred border">
-          </div>
-        </div>
-          <div class="span6">
-            <form>
-</div>
-</div>
+		p{
+			font-size:36px;
+			color:white;
+		}
+		</style>
+		<div class="imageholder" style="background-image:url(./Users/VAIO/Desktop/BGbattle.jpg);"></div>
+		<div class="container">
+<form>
 <script language="javascript">getDataFromDb();</script>
 <td>
 <div class="row">
-  <div align="center" class="col-md-3"> <img src="animal\frog.png" alt="14 0x140" ><br>
-  <div class="span4 team" id="spanteam0">
-      <p class="score" id="team0">0</p>
-  </div></div>
-      <div align="center" class="col-md-3"> <img src="animal\geraf.png"  alt="140x140" ><br>
-  <div align="center" class="span4 team" id="spanteam1">
-      <p class="score" id="team1">0</p>
-  </div></div>
-      <div align="center" class="col-md-3"> <img src="animal\lion.png" alt="140x140" ><br>
-  <div class="span4 team" id="spanteam2">
-      <p class="score" id="team2">0</p>
-  </div></div>
-      <div align="center" class="col-md-3"> <img src="animal\monky.png" alt="140x140" ><br>
-  <div  class="span4 team" id="spanteam3">
-      <p class="score" id="team3">0</p>
-  </div></div>
+	<div align="center" class="col-md-3">
+		<div  class="span4" id="teamback0">
+			<font style="font-size:25px" color="red">Team<br>สีแดง</label>
+			<div class="relative" >				
+				<img src="Team\Play.png"  alt="140x140" width="186" height="186">
+				<p class="absolute" id="team0" style="font-size:60px">0</p>
+			</div>
+		</div>
+	</div>
+	<div align="center" class="col-md-3">
+		<div class="span4" id="teamback1">
+			<font style="font-size:25px" color="green">Team<br>สีเขียว</label>
+			<div class="relative">
+				<img src="Team\Play.png" alt="140x140" width="186" height="186">
+				<p class="absolute" id="team1" style="font-size:60px">0</p>
+			</div>
+		</div>
+	</div>
+	<div align="center" class="col-md-3">
+		<div  class="span4" id="teamback2">
+			<font style="font-size:25px" color="yellow">Team<br>สีเหลือง</label>
+			<div class="relative">
+				<img src="Team\Play.png" alt="140x140" width="186" height="186">
+				<p class="absolute" id="team2" style="font-size:60px">0</p>
+			</div>
+		</div>
+	</div>
+		<div align="center" class="col-md-3">
+			<div  class="span4" id="teamback3">
+				<font style="font-size:25px" color="blue">Team<br>สีน้ำเงิน</label>
+				<div class="relative">
+					<img src="Team\Play.png" alt="140x140" width="186" height="186">  
+					<p class="absolute" id="team3" style="font-size:60px">0</p>
+				</div>
+			</div>
+		</div>
 </div>
-
+<br>
 <div class="row">
-  <div align="center" class="col-md-3"> <img src="animal\pig.png" alt="140x140" ><br>
-  <div class="span4 team" id="spanteam4">
-      <p class="score" id="team4">0</p>
-  </div></div>
-      <div align="center" class="col-md-3"> <img src="animal\panda.png" alt="140x140" ><br>
-  <div class="span4 team" id="spanteam5">
-      <p class="score" id="team5">0</p>
-  </div></div>
-      <div align="center" class="col-md-3"> <img src="animal\sheep.png" alt="140x140" ><br>
-  <div class="span4 team" id="spanteam6">
-      <p class="score" id="team6">0</p>
-  </div></div>
-      <div align="center" class="col-md-3"> <img src="animal\tiger.png" alt="140x140" ><br>
-  <div class="span4 team" id="spanteam7">
-      <p class="score" id="team7">0</p>
-  </div></div>
+	<div align="center" class="col-md-3">
+		<div class="span4 team" id="teamback4">
+			<font style="font-size:25px" color="cyan">Team<br>สีฟ้า</label>
+			<div class="relative">
+				<img src="Team\Play.png" alt="140x140" width="186" height="186"><br>
+				<p class="absolute" id="team4" style="font-size:60px">0</p>
+			</div>
+		</div>
+	</div>
+	<div align="center" class="col-md-3">
+		<div class="span4" id="teamback5">
+			<font style="font-size:25px" color="pink">Team<br>สีชมพู</label>
+			<div class="relative">
+				<img src="Team\Play.png" alt="140x140" width="186" height="186">
+				<p class="absolute" id="team5" style="font-size:60px">0</p>
+			</div>
+		</div>
+	</div>
+	<div align="center" class="col-md-3" >
+		<div class="span4" id="teamback6">
+			<font style="font-size:25px" color="purple">Team<br>สีม่วง</label>
+			<div class="relative">
+				<img src="Team\Play.png" alt="140x140" width="186" height="186">	
+				<p class="absolute" id="team6" style="font-size:60px">0</p>
+			</div>
+		</div>
+	</div>
+	<div align="center" class="col-md-3">
+		<font style="font-size:25px" color="orange">Team<br>สีส้ม</label>
+		<div class="span4" id="teamback7">
+			<div class="relative">
+				<img src="Team\Play.png" class=alt="140x140" width="186" height="186">
+				<p class="absolute" id="team7" style="font-size:60px">0</p>
+			</div>
+		</div>
+	</div>
 </div>
 </td>
-      </div>
-    </div>
+			</div>
+		</div>
 </body>
 </form>
 </html>
