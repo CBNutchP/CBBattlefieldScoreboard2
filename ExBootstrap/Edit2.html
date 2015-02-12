@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+  </head>
+  <script src="jquery-2.1.1.min.js"></script>
+  <script src="bootstrap\js\bootstrap.js"></script>
+  <script src="Edit2.js"></script>
+  <script type="text/javascript">
+    function cloneTurn(){
+      $('#demolist li').on('click', function(){
+        $('#datebox').val($(this).text());
+    });
+    }
+    shTurn();
+    function cloneTeam(){
+      $('#teamlist li').on('click', function(){
+        $('#teambox').val($(this).text());
+    });
+    }
+    shTeam();
+  </script>
+  <nav class="nav nav-tabs" role="tablist">
+            <button class="btn btn-danger" onclick="window.location.href='ShowScore.html'">Score</button>
+            <button class="btn btn-danger"  onclick="window.location.href='InputScore.html'">Input</button>
+            <button class="btn btn" disabled >Edit</button>
+      </nav>
+  <body>
+    <div class="container">
+      <h2>EDIT TURN</h2>
+      <p>Select Turn</p>     
+      <form action="edit2.php" method="post">
+      <div class="container">
+        <div class="col-sm-8">
+            <div class="input-group">                                            
+                <input type="TextBox" ID="datebox" name="cturn" Class="form-control"></input>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="demolist" class="dropdown-menu">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div><br>
+      <input type="submit" class="btn btn-success" value="Update"> 
+      <input type="reset" class="btn btn-warning" value="Clear">                          
+<table class="table" border="1">
+  <tr>
+    <td><h2>Team</h2></td><td><h2>Commander1</h2></td><td><h2>Commander2</h2></td><td><h2>K.O</h2></td><td><h2>Penalty</h2></td>
+    <tr>
+                            <td> Team: <div class="input-group">                                            
+                                <input type="TextBox" ID="teambox" name="cteam" Class="form-control"></input>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul id="teamlist" class="dropdown-menu">
+
+                                    </ul>
+                                </div>
+                            </div> </td>
+                            <td> <label for="ACMDA1">Att1:</label><input id="ACMDA1" type="radio" name="CMD1" value="A">
+                            <label for="ACMDD1">Def1:</label><input id="ACMDD1" type="radio" name="CMD1" value="D"><br>
+                            <label for="ACMDC1">charge1:</label><input id="ACMDC1" type="radio" name="CMD1" value="C">
+                            <label for="ACMDR1">refill1:</label><input id="ACMDR1" type="radio" name="CMD1" value="R"></td>
+                            <td><label for="ACMDA2"> Att2:</label><input id ="ACMDA2" type="radio" name="CMD2" value="A">
+                            <label for="ACMDD2">Def2:</label><input id ="ACMDD2" type="radio" name="CMD2" value="D"><br>
+                            <label for="ACMDC2">charge2:</label><input id ="ACMDC2" type="radio" name="CMD2" value="C">
+                            <label for="ACMDR2">refill2:</label><input id ="ACMDR2" type="radio" name="CMD2" value="R"></td>
+                            <td><label for="ACMDKO">KO:</label><input id ="ACMDKO" type="checkbox" name="KO" value="1"></td>
+                            <td><input type="number" name="PEN" placeholder="Penalty"></td>
+</tr>
+
+</table> 
+    </form>
+    </div>
+  </body>
+</html>
