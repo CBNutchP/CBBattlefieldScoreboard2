@@ -8,6 +8,5 @@ function shTurn(){
           
           console.log(result);
           console.log(result[0]);
-          for()
         }
         });}
