@@ -107,7 +107,7 @@ $GTeam=$_POST['GTeam'];
 $GCMD1=$_POST['GCMD1'];
 $GCMD2=$_POST['GCMD2'];
 $GKO=$_POST['GKO'];
-$GFoul=$_POST['CPEN'];
+$GFoul=$_POST['GPEN'];
 if($GCMD1 =='A' && $GCMD2=='A'){
 	$GPIT = 3 + $GFoul;
 }
@@ -126,7 +126,7 @@ $HCMD2=$_POST['HCMD2'];
 $HKO=$_POST['HKO'];
 $HFoul=$_POST['HPEN'];
 if($HCMD1 =='A' && $HCMD2=='A'){
-	$APIT = 3 + $AFoul;
+	$HPIT = 3 + $HFoul;
 }
 else if($HCMD1 =='A' || $HCMD2=='A'){
 	$HPIT = 1 + $HFoul;
@@ -152,7 +152,7 @@ mysql_query( "UPDATE KO SET KO='$DKO' WHERE Turn='$Turn' AND Team='$DTeam' ");
 mysql_query( "UPDATE TurnTb SET Commander1='$ECMD1',Commander2='$ECMD2',PIT='$EPIT' WHERE Turn='$Turn' AND Team='$ETeam' ");
 mysql_query( "UPDATE PenaltyTb SET Foul='$EFoul'  WHERE Turn='$Turn' AND Team='$ETeam'");
 mysql_query( "UPDATE KO SET KO='$EKO' WHERE Turn='$Turn' AND Team='$ETeam' ");
-mysql_query( "UPDATE TurnTb SET Commander1='$FCMD1',Commander2='$FCMD2',PIT='$BPIT' WHERE Turn='$Turn' AND Team='$FTeam' ");
+mysql_query( "UPDATE TurnTb SET Commander1='$FCMD1',Commander2='$FCMD2',PIT='$FPIT' WHERE Turn='$Turn' AND Team='$FTeam' ");
 mysql_query( "UPDATE PenaltyTb SET Foul='$FFoul'  WHERE Turn='$Turn' AND Team='$FTeam'");
 mysql_query( "UPDATE KO SET KO='$FKO' WHERE Turn='$Turn' AND Team='$FTeam' ");
 mysql_query( "UPDATE TurnTb SET Commander1='$GCMD1',Commander2='$GCMD2',PIT='$GPIT' WHERE Turn='$Turn' AND Team='$GTeam' ");

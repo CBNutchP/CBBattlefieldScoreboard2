@@ -1,0 +1,9 @@
+document how to use 
+keydown
+p =Play/Pause
+s =Stop
+spacebar=Pause 
+left arrow = decrease maxturn
+rigth arrow = increase maxturn
+,==turn-1
+.==turn+1

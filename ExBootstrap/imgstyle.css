@@ -10,7 +10,13 @@
   	width: 186px;
   	height: 186px;
 }
-.backgroundking {
-	background-color: grey;
-	border-radius: 15px;
+.background {
+	/*border-radius: 15px;*/
+}
+.absolutetime{
+  position: absolute;
+
+}
+.relativetime {
+    position: relative;
 }
