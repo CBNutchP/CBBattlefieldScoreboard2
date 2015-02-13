@@ -7,3 +7,20 @@ left arrow = decrease maxturn
 rigth arrow = increase maxturn
 ,==turn-1
 .==turn+1
+DB
+Table CountTurn เก็บค่าTurn เพื่อดึงขึ้นหน้าEDIT
+Turn Type:int Primary Key 
+Table KO เก็บประวัติการKO ในของแต่ละทีม
+Turn Type:int Primary Key 
+Team Type:varchar Primary Key 
+KO Type:enum('0','1')
+Table PenaltyTb ไว้เก็บคะแนนโทษหรือการทดโทษ
+Turn Type:int Primary Key 
+Team Type:varchar Primary Key 
+Foul Type:int
+Table TurnTb เก็บค่าต่างรวมถึงคะแนนในแต่ละตา
+Turn Type:int Primary Key 
+Team Type:varchar Primary Key 
+Commander1 Type:Varchar
+Commander2 Type:Varchar
+PIT Type :Int
